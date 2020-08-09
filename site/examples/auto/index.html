@@ -1,0 +1,34 @@
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <button onclick="addandcall()">Add e iniciar</button>
+
+
+    <script>
+        function addandcall() {
+            var head = document.getElementsByTagName('head')[0];
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = '/togetherjs.js';
+            head.appendChild(script);
+               
+            script.onload= function(){
+                TogetherJS(this);
+               
+            TogetherJS.on('ready', function(){
+                var urlparaagente=document.querySelector('.togetherjs-share-link');
+            console.log(urlparaagente.value);
+            document.querySelector('#togetherjs-dock').style.display="none"
+            })
+            }
+           
+            
+        }
+    </script>
+</body>
+
+</html>
